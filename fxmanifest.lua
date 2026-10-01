@@ -1,29 +1,4 @@
-fx_version 'cerulean'
-game 'gta5'
-
-author 'Szilko121 (SzCore Team)'
-description 'Centralized UI component system: notifications, progress bars, interactive dialogs, radial menus, and HUD.'
-version '1.0.0'
-
-lua54 'yes'
-
-shared_scripts {
-    '@ox_lib/init.lua',
-    '@szcore/shared/init.lua',
-    'config.lua',
-    'shared/**/*.lua'
-}
-
-client_scripts {
-    'client/**/*.lua'
-}
-
-server_scripts {
-    '@oxmysql/lib/MySQL.lua',
-    'server/**/*.lua'
-}
-
-dependencies {
-    'szcore',
-    'oxmysql'
-}
+fx_version 'cerulean'; game 'gta5'; author 'SzCode / SzCore'; version '1.4.0-rc1'
+ui_page 'web/index.html'
+files {'web/index.html','web/style.css','web/app.js'}
+client_script 'client/main.lua'
