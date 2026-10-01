@@ -1,74 +1,74 @@
-# szcore_ui
+<div align="center">
 
-**SzCore Framework 1.4.0-rc1** · by **SzCode**
+<img src="https://capsule-render.vercel.app/api?type=waving&height=190&color=0:05080D,45:0066FF,100:00D4FF&text=SzCore+UI&fontSize=42&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=SzCore+Framework+%E2%80%A2+Shared+UI&descAlignY=60&descSize=16" width="100%" alt="SzCore UI" />
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=21&duration=2500&pause=850&color=00D4FF&center=true&vCenter=true&width=720&height=52&lines=Shared+UI;Modular+%E2%80%A2+Server-Authoritative+%E2%80%A2+Developer+First" alt="SzCore UI animated headline" />
 
-Shared notification, text UI and progress interfaces for SzCore resources.
+<p><b>Shared native UI primitives used across SzCore modules for notifications, TextUI prompts and progress feedback.</b></p>
+<p>
+<img src="https://img.shields.io/badge/SzCore-v1.4.0--rc1-8B5CF6?style=for-the-badge" alt="Version">
+<img src="https://img.shields.io/badge/Type-Shared+UI-00D4FF?style=for-the-badge" alt="Type">
+<img src="https://img.shields.io/badge/FiveM-Resource-F40552?style=for-the-badge&logo=fivem&logoColor=white" alt="FiveM">
+<img src="https://img.shields.io/badge/Lua-5.4-2C2D72?style=for-the-badge&logo=lua&logoColor=white" alt="Lua">
+</p>
+<p>
+<a href="https://github.com/Szilko121/szcore_ui/stargazers"><img src="https://img.shields.io/github/stars/Szilko121/szcore_ui?style=flat-square&logo=github&color=00D4FF" alt="Stars"></a>
+<a href="https://github.com/Szilko121/szcore_ui/issues"><img src="https://img.shields.io/github/issues/Szilko121/szcore_ui?style=flat-square&logo=github&color=EF4444" alt="Issues"></a>
+<img src="https://img.shields.io/github/last-commit/Szilko121/szcore_ui?style=flat-square&logo=github&color=22C55E" alt="Last commit">
+</p>
+<p><a href="https://github.com/Szilko121/SzCore-Framework"><b>Framework</b></a> • <a href="https://github.com/Szilko121/SzCore-Framework/tree/main/docs"><b>Docs</b></a> • <a href="https://github.com/Szilko121/SzCore-Recipe"><b>Recipe</b></a> • <a href="https://github.com/Szilko121/szcore_ui/issues"><b>Issues</b></a></p>
+</div>
 
-## Installation
+---
+
+## 🚀 Overview
+
+Shared native UI primitives used across SzCore modules for notifications, TextUI prompts and progress feedback.
+
+> This is a shared presentation layer; it does not own persistent gameplay state.
+
+## ✨ Highlights
+
+| | Capability |
+|---:|---|
+| ⚡ | **Notifications** |
+| 🧩 | **TextUI prompts** |
+| 🛡️ | **Progress interface** |
+| 💾 | **Small dependency footprint** |
+| 🎯 | **Reusable NUI layer** |
+| 🔌 | **Consistent SzCore visual feedback** |
+
+## 📦 Installation
+
+**Dependencies:** No mandatory resource dependency declared.
 
 ```bash
-git clone https://github.com/Szilko121/szcore_ui.git resources/[szcore]/szcore_ui
+git clone https://github.com/Szilko121/szcore_ui.git "resources/[szcore]/szcore_ui"
 ```
-
-Then start the resource after its dependencies:
 
 ```cfg
 ensure szcore_ui
 ```
 
-**Declared dependencies:** None declared in `fxmanifest.lua`.
+For a full deployment use **[SzCore-Recipe](https://github.com/Szilko121/SzCore-Recipe)**.
 
-For a complete server installation, use [`SzCore-Recipe`](https://github.com/Szilko121/SzCore-Recipe).
+## 🔌 API Highlights
 
-## What this resource provides
+`Notify` · `ShowTextUI` · `HideTextUI` · `Progress`
 
-Shared notification, text UI and progress interfaces for SzCore resources.
+## 🛡️ Engineering Principles
 
-The resource is designed to use SzCore's server-authoritative APIs and modular startup model. Do not rename the resource directory: other resources may reference it by its canonical name.
+- Server authority for persistent or security-sensitive state.
+- Explicit cross-resource APIs.
+- Modular resource boundaries.
+- Event-driven updates where practical.
+- No fixed performance promise without a controlled benchmark.
 
-## Public exports detected
+## 🧩 Part of SzCore
 
-- `HideTextUI`
-- `Notify`
-- `Progress`
-- `ShowTextUI`
+<div align="center">
+[![Framework](https://img.shields.io/badge/SzCore-Framework-00D4FF?style=for-the-badge&logo=github)](https://github.com/Szilko121/SzCore-Framework)
+[![Recipe](https://img.shields.io/badge/txAdmin-Recipe-2563EB?style=for-the-badge&logo=github)](https://github.com/Szilko121/SzCore-Recipe)
 
-See [`docs/API.md`](docs/API.md) for the generated reference and the central [`SzCore-Framework`](https://github.com/Szilko121/SzCore-Framework) documentation for framework-wide API contracts.
-
-## Network events detected
-
-- `szcore_ui:notify`
-
-Network events are implementation surfaces, not automatically trusted public APIs. Server handlers validate state/permissions where applicable. Prefer documented exports for third-party integrations.
-
-## Commands
-
-- No direct `RegisterCommand` entry detected.
-
-## Key mappings
-
-- No direct key mapping detected.
-
-## Database
-
-- This resource does not directly reference an SzCore SQL table, or uses core storage APIs instead.
-
-Fresh-install schema and migrations are owned by the `szcore` core resource unless this repository contains its own SQL file.
-
-## Configuration
-
-Read [`docs/CONFIGURATION.md`](docs/CONFIGURATION.md). Configuration is intentionally resource-local so optional modules can be restarted and maintained independently.
-
-## Development
-
-- Keep server-authoritative mutations on the server.
-- Validate source, distance, permission and entity ownership for sensitive network actions.
-- Prefer SzCore callbacks/exports over polling.
-- Avoid permanent tight loops unless a FiveM native explicitly requires per-frame application.
-- Keep backwards compatibility changes explicit and documented.
-
-## Version
-
-Current release candidate: **1.4.0-rc1**.
-
-This is an RC build. Validate it on a staging FXServer/OneSync/MariaDB environment before production rollout.
+<br><br><sub>Built by <b>SzCode</b> for the FiveM community.</sub>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=90&section=footer&color=0:00D4FF,55:0066FF,100:05080D" width="100%" alt="SzCore footer" />
+</div>
